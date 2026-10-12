@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+/* Self-hosted fonts (OFL 1.1 — see public/ATTRIBUTION.md). No external requests. */
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-400.woff2") format("woff2");
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-500.woff2") format("woff2");
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-600.woff2") format("woff2");
+  font-weight: 600; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-700.woff2") format("woff2");
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/fonts/SpaceGrotesk-500.woff2") format("woff2");
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/fonts/SpaceGrotesk-600.woff2") format("woff2");
+  font-weight: 600; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/fonts/SpaceGrotesk-700.woff2") format("woff2");
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: #0b0f14;
+  color: #e8eef5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display { font-family: "Space Grotesk", ui-sans-serif, system-ui, sans-serif; }
+
+.scene canvas { display: block; touch-action: none; }
+
+/* Hover tooltip over the 3D scene (adapted from Human Atlas .part-hover) */
+.part-hover {
+  position: absolute;
+  pointer-events: none;
+  background: rgba(10, 15, 22, 0.92);
+  border: 1px solid rgba(94, 234, 212, 0.35);
+  color: #e8eef5;
+  font-size: 12px;
+  line-height: 1.35;
+  padding: 4px 10px;
+  border-radius: 8px;
+  z-index: 30;
+  max-width: 240px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.scroll-thin::-webkit-scrollbar { width: 6px; height: 6px; }
+.scroll-thin::-webkit-scrollbar-thumb { background: rgba(148,163,184,.35); border-radius: 999px; }
+.scroll-thin::-webkit-scrollbar-track { background: transparent; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
